@@ -1,37 +1,140 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
     margin: 0;
-}
-
-/* 1. Описываем саму анимацию появления */
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;         /* Элемент полностью прозрачный */
-    transform: translateY(20px); /* Смещен чуть вниз для красивого эффекта */
-  }
-  to {
-    opacity: 1;         /* Элемент становится видимым */
-    transform: translateY(0);    /* Возвращается на свое место */
-  }
-}
-
-/* 2. Применяем анимацию к классу */
-.fade-in {
-  /* Название анимации | Длительность (1 секунда) | Плавность | Задержка перед стартом (0.2 секунды) */
-  animation: fadeInAnimation 1s ease-out 0.2s forwards;
-  
-  /* Важно: оставляем элемент в конечном состоянии анимации, чтобы он не исчез обратно */
-  opacity: 0; 
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: #333;
 }
 
-div {
-    display: flex;
+header {
+  display: flex;
+    justify-content: space-between;
     align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.feedback {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: #dbdbdb;
+    border-radius: 10px; 
+    padding: 20px;
+    gap: 20px;
+}
+
+.feedback-card {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px; 
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.in-feedback {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: #dbdbdb;
+    border-radius: 10px; 
+    padding: 20px;
+    gap: 20px;
+}
+
+.service-item {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px; 
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.in-services {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.in-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: #dbdbdb;
+    border-radius: 10px; 
+    padding: 20px;
+    gap: 20px;
+}
+
+.is-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
