@@ -37,9 +37,9 @@ header {
 a {
     color:#8686ff;
 }
-/*a:hover {
+a:hover {
     color:#aaaaff;
-}*\
+}
 
 .news-card {
     display: flex;
