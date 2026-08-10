@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -44,4 +44,14 @@ h1{
     flex-direction: column;
     gap: 10px;
     text-align: center;
+} */
+
+
+body {
+    background-image: url(https://upload.wikimedia.org/wikipedia/ru/7/78/Trollface.svg?utm_source=ru.wikipedia.org&utm_campaign=index&utm_content=original);
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    text-align: center;
+    color: red;
 }
