@@ -38,6 +38,7 @@ img {
 a {
     text-decoration: none;
     color: rgb(179, 104, 230);
+    font-weight: 16px;
 }
 .img-container {
     display: flex;
@@ -52,6 +53,36 @@ h1{
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.zakaz:hover {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+.host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.host:hover {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
 }
 @media (max-width: 1000px) {
     .img-container {
