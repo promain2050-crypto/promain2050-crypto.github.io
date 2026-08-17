@@ -18,8 +18,8 @@ body {
     align-items: center;
     padding: 20px;
     margin: 30px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
