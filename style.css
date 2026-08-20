@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 .img-card {
     display: flex;
@@ -43,6 +44,7 @@ a {
 .img-container {
     display: flex;
     flex-direction: row;
+    /* transition: flex-direction 0.3s ease-in-out; */
 }
 h1{
     margin: 10px;
@@ -84,10 +86,28 @@ h1{
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
     transform: scale(1.1);
 }
+/* 1. Создаем сценарий анимации */
+@keyframes fadeInUp {
+  from {                                     /* ИИ КОДИТ ТУТ */
+    opacity: 0;
+    transform: translateY(30px); /* Начальная точка: ниже на 30px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* Конечная точка: на своем месте */
+  }
+}
+
+/* 2. Применяем анимацию к нужному элементу */
+.element {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
 @media (max-width: 1000px) {
     .img-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;    
+        align-items: center;
     }
     img {
         width: 100%;            
