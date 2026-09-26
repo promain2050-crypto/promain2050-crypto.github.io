@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Tahoma", "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000; /* В Windows окна обычно со светлым фоном и темным текстом */
+    
+    /* ИСПРАВЛЕНО: Правильная запись фона + стилизация под Windows XP */
+    background: #5a7edc url('img/images (1).jpg') no-repeat center center / cover fixed;
+}
+
+.main-layout {
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Главный заголовок в стиле текста рабочего стола */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px #000000;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Окна в стиле Windows XP / 2005 */
+.img-card, .zakaz, .host, .realise {
+    background: #f1efe7; /* Классический цвет окон Luna */
+    border: 3px solid #0053e2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 0; /* Убираем внутренний отступ, чтобы шапка легла ровно */
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+/* Имитация синей шапки окна Windows */
+.img-card::before, .zakaz::before, .host::before, .realise::before {
+    content: "Системное окно";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    background: linear-gradient(180deg, #0058e6 0%, #003cd2 10%, #0058e6 100%);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px #000000;
+    border-bottom: 1px solid #002da2;
+}
+
+.img-card::after, .zakaz::after, .host::after, .realise::after {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.window-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.img-card {
+    width: 350px;
+}
+
+/* заголовки окон писать здесь */
+.img-card::before { content: "Просмотр изображения"; }
+.zakaz::before { content: "Заказ"; }
+.host::before { content: "Хостинг"; }
+/* .old-desing::before {content: "Старый дизайн";} */
+.realise::before {content: "Версии";}
+
+.img-thumb {
+    width: 100%;
+    border: 2px inset #ffffff;
+    overflow: hidden;
+}
+
+.img-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Кнопки в стиле Windows */
+.card-link, .host-btn, .zakaz button{
+    text-decoration: none;
+    color: #000000 !important;
+    font-size: 13px;
+    padding: 6px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #eaeaea 60%, #d4d0c8 100%);
+    border: 1px solid #7f9db9;
+    border-radius: 3px;
+    box-shadow: inset -1px -1px 1px #808080, inset 1px 1px 1px #ffffff;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.card-link:hover, .host-btn:hover, .zakaz button:hover {
+    background: linear-gradient(180deg, #ffe8a6 0%, #ffc459 100%);
+    border-color: #e68b2c;
+}
+
+.img-card:hover, .zakaz:hover, .host:hover, .realise:hover {
+    transform: translateY(-2px);
+}
+
+.zakaz {
+    width: 100%;
+    max-width: 800px;
+}
+
+.zakaz p {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.zakaz img {
+    height: 24px;
+    vertical-align: middle;
+}
+
+.host {
+    width: 100%;
+    max-width: 500px;
+}
+
+.host-btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+h2 {
+    color: #000000 !important;
+    font-size: 13px;
+    padding: 6px 20px;
+}
+
+@media (max-width: 1000px) {
+    .img-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
