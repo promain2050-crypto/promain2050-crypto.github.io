@@ -53,6 +53,7 @@ h2 {
 
 /* Окна в стиле Windows XP / 2005 */
 .img-card, .zakaz, .host, .realise {
+    border-radius: 7px 7px 0 0;
     background: #f1efe7; /* Классический цвет окон Luna */
     border: 3px solid #0053e2;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
