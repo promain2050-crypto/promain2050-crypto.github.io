@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/p.png">
+    <title>Портфолио</title>
+    <meta name="description" content="Сайт портфолио, где найти бесплатный хост">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="img-nav">
+            <img src="img/p.png" style="width: 70px;">
+        </div>
+            <ul class="nav-ul">
+                <li><a href="index.html" class="btn">Главная</a></li>
+                <li><a href="host.html" class="btn">Бесплатный хост</a></li>
+                <li><a href="releases.html" class="btn">Архив версий сайта</a></li>
+                <li ><a href="windows_design/windows_design.html" class="btn">Просмотр старого дизайна</a></li>
+            </ul>
+    </nav>
+
+    <div class="main-content">
+        
+        <h1>Мои работы</h1>
+
+        <div class="container">
+            <div class="card">
+                <div class="img-thumb">
+                    <img src="img/Снимок экрана (20).png" class="card-link, preview-img">
+                </div>
+                <a href="" class="card-link">Сайт недоступен</a>
+            </div>
+
+            <div class="card">
+                <div class="img-thumb">
+                    <img src="img/Снимок экрана (22).png" class="card-link, preview-img">
+                </div>
+                <a href="" class="card-link">Сайт недоступен</a>
+            </div>
+
+            <div class="card">
+                <div class="img-thumb">
+                    <img src="img/Снимок экрана 2026-08-12 113708.png" class="card-link, preview-img">
+                </div>
+                <a href="" class="card-link">Сайт недоступен</a>
+            </div>
+        </div>
+
+        <div class="zakaz">
+            <h2>Можно ли заказать сайт?</h2>
+            <p>Да! По поводу заказа можно написать в: 
+                <a href="https://t.me/pamiaq" target="_blank" class="host-btn">Telegram</a> 
+                или 
+                <button onclick="alert('Дискорд: motop_klaunchera')">Discord</button>
+            </p>
+        </div>
+    </div>
+    <!-- 1. Модальное окно (вставьте в самый конец HTML, перед </body>) -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
+
+    <!-- 2. Подключение вашего JS-файла (или пишите код прямо внутри тегов) -->
+    <script src="script.js"></script>
+</body>
+</html>
