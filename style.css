@@ -184,3 +184,9 @@ h2 {
         max-width: 400px;
     }
 }
+
+.btw {
+    background-color: transparent; /* полностью прозрачный фон */
+    color: #000; /* цвет текста */
+    border: 0px solid #000; /* рамка кнопки */
+}
