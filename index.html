@@ -6,12 +6,19 @@
     <title>IIoII - clan ddnet</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/photo_2026-10-10_19-00-03.jpg">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
     <nav>
         <div class="h1">
-            <h1>✟IIoII✟ | <span style="color: red; border: 2px red solid; border-radius: 50px; padding: 10px;">ddnet</span></h1>
+            <h1>✟IIoII✟ | <span class="tag">ddnet</span></h1>
         </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="requirements.html">Анкета для вступления</a></li>
@@ -20,22 +27,128 @@
     </nav>
 
     <div class="content">
-        <h1>Почему стоит выбрать именно этот клан?</h1>
+        <section class="hero reveal">
+            <span class="hero-badge">клан DDNet</span>
+            <h1>✟IIoII✟</h1>
+            <p>Мы дружный клан, который играет вместе, качает скилл на картах и собирается на ивенты. Здесь легко найти друзей, позаказывать друг другу и просто хорошо проводить время.</p>
+            <div class="hero-btns">
+                <a class="btn btn-primary" href="requirements.html">Подать анкету</a>
+                <a class="btn" href="members.html">Список участников</a>
+            </div>
+        </section>
+
+        <section class="stats reveal">
+            <div class="stat">
+                <span class="num" data-target="18">0</span>
+                <span class="stat-label">участников в клане</span>
+            </div>
+            <div class="stat">
+                <span class="num" data-target="200" data-suffix="+">0</span>
+                <span class="stat-label">часов нужно для вступления</span>
+            </div>
+        </section>
+
+        <h2 class="section-title reveal">Почему стоит выбрать именно этот клан?</h2>
         <div class="about">
-            <div class="card">
+            <div class="card reveal">
                 <h3>Добрые игроки</h3>
                 <p>Можно найти новые знакомства и играть вместе с друзьями.</p>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <h3>Профессионалы в клане</h3>
                 <p>В клане находятся игроки топа карты Linear.</p>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <h3>Ивенты</h3>
                 <p>Игроки ходят на ивенты все вместе.</p>
             </div>
+            <div class="card reveal">
+                <h3>Активность</h3>
+                <p>В клане всегда есть, с кем поиграть — никто не остаётся один.</p>
+            </div>
         </div>
-        <a href="requirements.html">Анкета для вступления</a>
+
+        <h2 class="section-title reveal">Как вступить в клан</h2>
+        <div class="steps">
+            <div class="step reveal">
+                <span class="step-num">1</span>
+                <h3>Заполни анкету</h3>
+                <p>Перейди на страницу «Анкета для вступления» и заполни её.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step-num">2</span>
+                <h3>Пройди проверку</h3>
+                <p>Проверка на пвп, возраст, количество часов и твой игровой ник.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step-num">3</span>
+                <h3>Поставь клан-тег ✟IIoII✟</h3>
+                <p>После проверки ты становишься полноценным участником клана.</p>
+            </div>
+        </div>
+
+        <section class="cta reveal">
+            <h2>Готов стать частью ✟IIoII✟?</h2>
+            <p>Заполни анкету — и присоединяйся к нашей команде уже сегодня.</p>
+            <div class="hero-btns">
+                <a class="btn btn-primary" href="requirements.html">Заполнить анкету</a>
+                <a class="btn" href="https://t.me/Lerz457">Написать в Telegram</a>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Главная</a>
+            <a href="requirements.html">Анкета</a>
+            <a href="members.html">Участники</a>
+            <a href="https://t.me/Lerz457">Telegram</a>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var reveals = document.querySelectorAll('.reveal');
+            var counters = document.querySelectorAll('.num[data-target]');
+
+            if (!('IntersectionObserver' in window)) {
+                reveals.forEach(function (el) { el.classList.add('visible'); });
+                counters.forEach(function (el) {
+                    el.textContent = el.dataset.target + (el.dataset.suffix || '');
+                });
+                return;
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    io.unobserve(entry.target);
+                });
+            }, { threshold: 0.15 });
+            reveals.forEach(function (el) { io.observe(el); });
+
+            var cio = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    var el = entry.target;
+                    var target = parseInt(el.dataset.target, 10);
+                    var suffix = el.dataset.suffix || '';
+                    var duration = 1300;
+                    var start = performance.now();
+
+                    function tick(now) {
+                        var p = Math.min((now - start) / duration, 1);
+                        var eased = 1 - Math.pow(1 - p, 3);
+                        el.textContent = Math.round(target * eased) + suffix;
+                        if (p < 1) requestAnimationFrame(tick);
+                    }
+                    requestAnimationFrame(tick);
+                    cio.unobserve(el);
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(function (el) { cio.observe(el); });
+        })();
+    </script>
 </body>
 </html>
