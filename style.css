@@ -8,12 +8,20 @@ html {
     scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('src/Oswald-VariableFont_wght.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
     background: linear-gradient(to bottom, #500000 30%, #000000 100%);
     background-attachment: fixed;
     min-height: 100vh;
     color: whitesmoke;
-    font-family: Tahoma, sans-serif;
+    font-family: "CustomFont";
     display: flex;
     flex-direction: column;
 }
