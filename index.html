@@ -9,109 +9,101 @@
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <nav>
-        <div class="h1">
-            <h1>✟IIoII✟ | <span class="tag">ddnet</span></h1>
+
+    <header class="header">
+        <div class="logo">
+            <h1>✟IIoII✟ | <span style="border: 2px purple solid; padding: 10px; border-radius: 30px; color: purple;">DDnet</span></h1>
         </div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="burger" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="requirements.html">Анкета для вступления</a></li>
-            <li><a href="members.html">Список участников</a></li>
-            <li><a href="team.html">Союзы клана</a></li>
-        </ul>
-    </nav>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="requirements.html">Анкета для вступления</a></li>
+                <li><a href="members.html">Список участников</a></li>
+                <li><a href="team.html">Союзы клана</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="content">
-        <section class="hero reveal">
-            <span class="hero-badge">клан DDNet</span>
-            <h1>✟IIoII✟</h1>
-            <p>Мы дружный клан, который играет вместе, качает скилл на картах и собирается на ивенты. Здесь легко найти друзей, позаказывать друг другу и просто хорошо проводить время.</p>
-            <div class="hero-btns">
-                <a class="btn btn-primary" href="requirements.html">Подать анкету</a>
-                <a class="btn" href="members.html">Список участников</a>
-            </div>
-        </section>
 
-        <section class="stats reveal">
+        <div class="first">
+            <h3>✟IIoII✟</h3>
+            <p>Мы дружный клан, который играет вместе, качает скилл на картах и собирается на ивенты. <br>Здесь легко найти друзей, позаказывать друг другу и просто хорошо проводить время.</p>
+            <div class="buttons">
+                <a href="requirements.html" class="action-but">Подать анкету</a>
+                <a href="members.html" class="but">Список участников</a>
+            </div>
+        </div>
+            
+        <div class="presecond">
             <div class="stat">
-                <span class="num" data-target="34">0</span>
+                <span class="num" data-target="36">0</span>
                 <span class="stat-label">участников в клане</span>
             </div>
             <div class="stat">
                 <span class="num" data-target="200" data-suffix="+">0</span>
                 <span class="stat-label">часов нужно для вступления</span>
             </div>
-        </section>
+        </div>
 
-        <h2 class="section-title reveal">Почему стоит выбрать именно этот клан?</h2>
-        <div class="about">
-            <div class="card reveal">
-                <h3>Добрые игроки</h3>
-                <p>Можно найти новые знакомства и играть вместе с друзьями.</p>
+        <div class="second">
+            <h2>Почему стоит выбрать именно наш клан?</h2>
+            <div class="windows">
+
+                <div class="card">
+                    <h3 class="head">Добрые игроки</h3>
+                    <p>Можно найти новые знакомства и играть вместе с друзьями.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="head">Профессионалы в клане</h3>
+                    <p>В клане находятся игроки топа карты Linear.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="head">Ивенты</h3>
+                    <p>Игроки ходят на ивенты все вместе.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="head">Активность</h3>
+                    <p>В клане всегда есть, с кем поиграть — никто не остаётся один.</p>
+                </div>
+
             </div>
-            <div class="card reveal">
-                <h3>Профессионалы в клане</h3>
-                <p>В клане находятся игроки топа карты Linear.</p>
-            </div>
-            <div class="card reveal">
-                <h3>Ивенты</h3>
-                <p>Игроки ходят на ивенты все вместе.</p>
-            </div>
-            <div class="card reveal">
-                <h3>Активность</h3>
-                <p>В клане всегда есть, с кем поиграть — никто не остаётся один.</p>
+
+        </div>
+
+        <div class="three">
+            <h3>Готов подать анкету в клан?</h3>
+            <div>
+                <p>Заполни анкету — и присоединяйся к нашей команде уже сегодня.</p>
+                <div class="buttons">
+                    <a href="requirements.html" class="action-but">Подать анкету</a>
+                    <a href="members.html" class="but">Список участников</a>
+                </div>
             </div>
         </div>
 
-        <h2 class="section-title reveal">Как вступить в клан</h2>
-        <div class="steps">
-            <div class="step reveal">
-                <span class="step-num">1</span>
-                <h3>Заполни анкету</h3>
-                <p>Перейди на страницу «Анкета для вступления» и заполни её.</p>
-            </div>
-            <div class="step reveal">
-                <span class="step-num">2</span>
-                <h3>Пройди проверку</h3>
-                <p>Проверка на пвп, возраст, количество часов и твой игровой ник.</p>
-            </div>
-            <div class="step reveal">
-                <span class="step-num">3</span>
-                <h3>Поставь клан-тег ✟IIoII✟</h3>
-                <p>После проверки ты становишься полноценным участником клана.</p>
-            </div>
-        </div>
-
-        <section class="cta reveal">
-            <h2>Готов стать частью ✟IIoII✟?</h2>
-            <p>Заполни анкету — и присоединяйся к нашей команде уже сегодня.</p>
-            <div class="hero-btns">
-                <a class="btn btn-primary" href="requirements.html">Заполнить анкету</a>
-                <a class="btn" href="https://t.me/Lerz457">Написать в Telegram</a>
-            </div>
-        </section>
     </div>
 
     <footer>
-        <div class="footer-links">
-            <a href="index.html">Главная</a>
-            <a href="requirements.html">Анкета</a>
-            <a href="members.html">Участники</a>
-            <a href="https://t.me/Lerz457">Telegram</a>
+        <div class="links">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="requirements.html">Анкета для вступления</a></li>
+                <li><a href="members.html">Список участников</a></li>
+                <li><a href="team.html">Союзы клана</a></li>
+            </ul>
         </div>
-        <Div class="info">
-            <p>site by: @pamiaqww</p>
-            <p>© 2026 IIoII Все права защищены</p>
-        </Div>
+
+        <div class="contact">
+            <p style="color: gray;">site by: @pamiaqww</p>
+            <p style="color: gray;">© 2026 IIoII Все права защищены.</p>
+        </div>
     </footer>
 
-    <script>
+        <script>
         (function () {
             var reveals = document.querySelectorAll('.reveal');
             var counters = document.querySelectorAll('.num[data-target]');
@@ -155,5 +147,6 @@
             counters.forEach(function (el) { cio.observe(el); });
         })();
     </script>
+
 </body>
 </html>
