@@ -96,6 +96,17 @@ a:hover {
     border-radius: 10px;
 }
 
+.btn-primary {
+    font-weight: bold;
+    background: linear-gradient(135deg, #c1121f, #7a0000);
+    border: 1px solid #ff4d4d;
+    box-shadow: 0 8px 25px rgba(193, 18, 31, 0.35);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #e01826, #930000);
+}
+
 /* ===== Адаптив ===== */
 
 .content {
@@ -184,6 +195,20 @@ footer .footer-links {
 footer p {
     color: #bdbdbd;
     font-size: 14px;
+}
+
+.admins {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-but {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 20px;
 }
 
 @media (max-width: 768px) {
