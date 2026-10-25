@@ -121,6 +121,102 @@ a:hover {
     background: rgba(255, 0, 0, 0.15);
 }
 
+/* ===== Лидер (корона) ===== */
+
+.members p.leader {
+    position: relative;
+    color: #ffd75e;
+    background: rgba(255, 215, 0, 0.10);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    text-shadow: 0 0 10px rgba(255, 200, 0, 0.55);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.members p.leader:hover {
+    background: rgba(255, 200, 0, 0.28);
+    box-shadow: 0 0 14px rgba(255, 200, 0, 0.5);
+}
+
+.members p.leader::after {
+    content: "OWNER";
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    border-radius: 20px;
+    background: #ffb400;
+    color: #2b1a00;
+    text-shadow: none;
+    vertical-align: middle;
+    box-shadow: 0 0 8px rgba(255, 180, 0, 0.6);
+}
+
+/* ===== Админ ===== */
+
+.members p.admin {
+    position: relative;
+    color: #ff9a9a;
+    background: rgba(255, 60, 60, 0.12);
+    border: 1px solid rgba(255, 60, 60, 0.35);
+    text-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.members p.admin::after {
+    content: "ADMIN";
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    border-radius: 20px;
+    background: #ff3c3c;
+    color: #fff;
+    text-shadow: none;
+    vertical-align: middle;
+    box-shadow: 0 0 8px rgba(255, 60, 60, 0.6);
+}
+
+.members p.admin:hover {
+    background: rgba(255, 60, 60, 0.28);
+    box-shadow: 0 0 14px rgba(255, 60, 60, 0.5);
+}
+
+/* ===== Младший админ ===== */
+
+.members p.junior-admin {
+    position: relative;
+    color: #9ab6ff;
+    background: rgba(70, 120, 255, 0.12);
+    border: 1px solid rgba(70, 120, 255, 0.35);
+    text-shadow: 0 0 10px rgba(90, 140, 255, 0.5);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.members p.junior-admin::after {
+    content: "ML ADMIN";
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    border-radius: 20px;
+    background: #4678ff;
+    color: #fff;
+    text-shadow: none;
+    vertical-align: middle;
+    box-shadow: 0 0 8px rgba(70, 120, 255, 0.6);
+}
+
+.members p.junior-admin:hover {
+    background: rgba(70, 120, 255, 0.28);
+    box-shadow: 0 0 14px rgba(70, 120, 255, 0.5);
+}
+
 footer {
     display: flex;
     flex-direction: column;
