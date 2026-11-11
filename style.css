@@ -291,6 +291,11 @@ a:hover {
     border-radius: 50%;
     background: linear-gradient(135deg, #c1121f, #7a0000);
     border: 1px solid #ff4d4d;
+    transition: transform 0.25s ease;
+}
+
+.step:hover .step-num {
+    transform: scale(1.18);
 }
 
 .step h3 {
