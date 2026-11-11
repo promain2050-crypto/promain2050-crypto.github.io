@@ -295,7 +295,7 @@ a:hover {
 }
 
 .step:hover .step-num {
-    transform: scale(1.18);
+    transform: translateY(-5px) scale(1.15);
 }
 
 .step h3 {
