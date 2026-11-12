@@ -1,315 +1,122 @@
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+.members {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    max-width: 960px;
+    counter-reset: member;
 }
 
-@font-face {
-  font-family: 'CustomFont';
-  src: url('src/font/Ubuntu-Bold.ttf') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+.members > p {
+    position: relative;
+    min-width: 0;
+    min-height: 72px;
+    margin: 0;
+    padding: 20px 18px 20px 62px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
+    overflow-wrap: anywhere;
+    counter-increment: member;
+    transition: background-color 180ms ease, border-color 180ms ease;
 }
 
-body {
-    background: linear-gradient(to bottom, #500000 30%, #000000 100%);
-    min-height: 100vh;
-    color: whitesmoke;
-    font-family: "CustomFont";
+.members > p::before {
+    content: counter(member, decimal-leading-zero);
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(239, 75, 85, .08);
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-    border: 1px red solid;
-    border-radius: 20px;
-    background-color: #580101;
-    box-shadow: 0 4px 20px rgba(7, 7, 7, 0.4);
-    max-width: 1200px;
-    width: calc(100% - 40px);
-    margin: 30px auto;
+.members > p.leader {
+    border-color: rgba(255, 215, 94, 0.4);
+    background: rgba(255, 215, 0, 0.08);
+    color: #ffd75e;
+    font-weight: 500;
 }
 
-nav .h1 h1 {
-    font-size: 22px;
+.members > p.admin {
+    border-color: rgba(239, 75, 85, 0.45);
+    background: rgba(193, 18, 31, 0.14);
+    color: #ff9a9a;
+    font-weight: 500;
 }
 
-nav .tag {
-    color: red;
-    border: 2px red solid;
-    border-radius: 50px;
-    padding: 8px 10px;
+.members > p.junior-admin {
+    border-color: rgba(122, 156, 255, 0.4);
+    background: rgba(70, 120, 255, 0.12);
+    color: #9ab6ff;
+    font-weight: 500;
+}
+
+.members > p:is(.leader, .admin, .junior-admin)::after {
+    display: inline-block;
+    margin-inline-start: 8px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    vertical-align: middle;
     white-space: nowrap;
 }
 
-.nav-toggle,
-.burger {
-    display: none;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    padding: 10px;
-    gap: 10px;
-}
-
-a {
-    text-decoration: none;
-    background-color: rgba(12, 12, 12, 0.425);
-    padding: 7px;
-    border-radius: 30px;
-    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-    color: whitesmoke;
-}
-
-a:hover {
-    background-color: rgba(5, 5, 5, 0.425);
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 12px 30px rgba(0, 50, 100, 0.3), 
-                inset 0 1px 2px rgba(255, 255, 255, 0.6);
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; 
-}
-
-.members {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background-color: rgba(8, 8, 8, 0.603);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* ===== Адаптив ===== */
-
-.content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px 40px;
-}
-
-.content > h1 {
-    font-size: clamp(22px, 4vw, 30px);
-}
-
-.members {
-    width: 100%;
-    max-width: 500px;
-}
-
-.members p {
-    padding: 8px 10px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.members p:hover {
-    background: rgba(255, 0, 0, 0.15);
-}
-
-/* ===== Лидер (корона) ===== */
-
-.members p.leader {
-    position: relative;
-    color: #ffd75e;
-    background: rgba(255, 215, 0, 0.10);
-    border: 1px solid rgba(255, 215, 0, 0.35);
-    text-shadow: 0 0 10px rgba(255, 200, 0, 0.55);
-    transition: background 0.25s ease, box-shadow 0.25s ease;
-}
-
-.members p.leader:hover {
-    background: rgba(255, 200, 0, 0.28);
-    box-shadow: 0 0 14px rgba(255, 200, 0, 0.5);
-}
-
-.members p.leader::after {
+.members > p.leader::after {
     content: "OWNER";
-    display: inline-block;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 2px 8px;
-    margin-left: 8px;
-    border-radius: 20px;
     background: #ffb400;
     color: #2b1a00;
-    text-shadow: none;
-    vertical-align: middle;
-    box-shadow: 0 0 8px rgba(255, 180, 0, 0.6);
+    box-shadow: 0 0 10px rgba(255, 180, 0, 0.35);
 }
 
-/* ===== Админ ===== */
-
-.members p.admin {
-    position: relative;
-    color: #ff9a9a;
-    background: rgba(255, 60, 60, 0.12);
-    border: 1px solid rgba(255, 60, 60, 0.35);
-    text-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
-    transition: background 0.25s ease, box-shadow 0.25s ease;
-}
-
-.members p.admin::after {
+.members > p.admin::after {
     content: "ADMIN";
-    display: inline-block;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 2px 8px;
-    margin-left: 8px;
-    border-radius: 20px;
-    background: #ff3c3c;
+    background: #ef4b55;
     color: #fff;
-    text-shadow: none;
-    vertical-align: middle;
-    box-shadow: 0 0 8px rgba(255, 60, 60, 0.6);
+    box-shadow: 0 0 10px rgba(239, 75, 85, 0.35);
 }
 
-.members p.admin:hover {
-    background: rgba(255, 60, 60, 0.28);
-    box-shadow: 0 0 14px rgba(255, 60, 60, 0.5);
-}
-
-/* ===== Младший админ ===== */
-
-.members p.junior-admin {
-    position: relative;
-    color: #9ab6ff;
-    background: rgba(70, 120, 255, 0.12);
-    border: 1px solid rgba(70, 120, 255, 0.35);
-    text-shadow: 0 0 10px rgba(90, 140, 255, 0.5);
-    transition: background 0.25s ease, box-shadow 0.25s ease;
-}
-
-.members p.junior-admin::after {
+.members > p.junior-admin::after {
     content: "ML ADMIN";
-    display: inline-block;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 2px 8px;
-    margin-left: 8px;
-    border-radius: 20px;
     background: #4678ff;
     color: #fff;
-    text-shadow: none;
-    vertical-align: middle;
-    box-shadow: 0 0 8px rgba(70, 120, 255, 0.6);
+    box-shadow: 0 0 10px rgba(70, 120, 255, 0.35);
 }
 
-.members p.junior-admin:hover {
-    background: rgba(70, 120, 255, 0.28);
-    box-shadow: 0 0 14px rgba(70, 120, 255, 0.5);
+@media (hover: hover) and (pointer: fine) {
+    .members > p:hover {
+        border-color: rgba(239, 75, 85, 0.65);
+        background: rgba(193, 18, 31, 0.18);
+    }
+
+    .members > p.leader:hover {
+        border-color: rgba(255, 215, 94, 0.65);
+        background: rgba(255, 200, 0, 0.16);
+    }
+
+    .members > p.junior-admin:hover {
+        border-color: rgba(122, 156, 255, 0.65);
+        background: rgba(70, 120, 255, 0.2);
+    }
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    margin-top: auto;
-    padding: 25px 20px;
-    border-top: 1px solid rgba(255, 0, 0, 0.35);
-    background: rgba(0, 0, 0, 0.55);
-    text-align: center;
-}
-
-footer .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-footer p {
-    color: #bdbdbd;
-    font-size: 14px;
-}
-@media (max-width: 768px) {
-    nav {
-        margin: 15px auto;
-        width: calc(100% - 24px);
-        padding: 15px;
-        border-radius: 16px;
-    }
-
-    nav .h1 h1 {
-        font-size: 17px;
-    }
-
-    nav .tag {
-        padding: 5px 8px;
-    }
-
-    .burger {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        padding: 11px 12px;
-        cursor: pointer;
-        background: rgba(12, 12, 12, 0.425);
-        border-radius: 12px;
-    }
-
-    .burger span {
-        display: block;
-        width: 24px;
-        height: 3px;
-        border-radius: 3px;
-        background: whitesmoke;
-        transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-
-    nav ul {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 8px;
-        padding: 10px 0 0;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 12px 10px;
-        font-size: 15px;
-    }
-
-    .nav-toggle:checked ~ ul {
-        display: flex;
-    }
-
-    .nav-toggle:checked ~ .burger span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .nav-toggle:checked ~ .burger span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle:checked ~ .burger span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .content {
-        padding: 10px 14px 30px;
-    }
-
-    a:hover {
-        transform: none;
+@media (max-width: 680px) {
+    .members {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
