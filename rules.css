@@ -15,6 +15,15 @@
     box-shadow: var(--shadow);
     text-align: left;
     overflow-wrap: anywhere;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+    .rules > .rule:hover {
+        transform: translateY(-4px) scale(1.03);
+        border-color: rgba(239, 75, 85, 0.45);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.3), 0 0 26px rgba(193, 18, 31, 0.14);
+    }
 }
 
 .rules > .rule > h3 {
